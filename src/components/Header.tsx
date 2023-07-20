@@ -1,13 +1,16 @@
 import { useSelector } from 'react-redux';
 
-type RootState = {
+export type RootState = {
   user:{
     email: string;
     password: string;
   }
+  wallet:{
+    currencies: string[];
+  }
 };
 
-function Header() {
+export function Header() {
   const email = useSelector((state: RootState) => state.user.email);
   return (
     <div>
@@ -27,5 +30,3 @@ function Header() {
     </div>
   );
 }
-
-export default Header;
