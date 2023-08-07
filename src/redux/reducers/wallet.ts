@@ -15,6 +15,10 @@ const wallet = (state = INITIAL_STATE, action: AnyAction) => {
       return {
         ...state, currencies: action.payload,
       };
+    case 'REQUEST_SUCCESSFUL2':
+      return {
+        ...state, expenses: [...state.expenses, action.payload],
+      };
     default:
       return state;
   }
