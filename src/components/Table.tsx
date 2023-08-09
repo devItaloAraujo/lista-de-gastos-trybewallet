@@ -1,5 +1,6 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from './Header';
+import { removeExpense } from '../redux/actions';
 
 function Table() {
   const header = ['Descrição',
@@ -13,6 +14,13 @@ function Table() {
     'Editar/Excluir'];
 
   const expenses = useSelector((state: RootState) => state.wallet.expenses);
+
+  const dispatch = useDispatch();
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const button = event.target as HTMLButtonElement;
+    dispatch(removeExpense(parseInt(button.value, 10)));
+  };
 
   return (
     <div>
@@ -34,7 +42,15 @@ function Table() {
                 <td>{parseFloat(exchangeRates[currency].ask).toFixed(2)}</td>
                 <td>{valueBRL.toFixed(2)}</td>
                 <td>Real</td>
-                <td>{0}</td>
+                <td>
+                  <button
+                    value={ id }
+                    onClick={ handleClick }
+                    data-testid="delete-btn"
+                  >
+                    Excluir
+                  </button>
+                </td>
               </tr>
             );
           })}

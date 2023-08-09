@@ -34,7 +34,7 @@ export function fetchCurrencies() {
 
 export function requestSuccessful2(exchangeRates: any, expense: ExpenseType) {
   return {
-    type: 'REQUEST_SUCCESSFUL2',
+    type: 'ADD_EXPENSE',
     payload: { ...expense, exchangeRates },
   };
 }
@@ -48,5 +48,12 @@ export function sendExpense(expense: ExpenseType) {
     } catch (error: any) {
       console.log(error);
     }
+  };
+}
+
+export function removeExpense(id : number) {
+  return {
+    type: 'REMOVE_EXPENSE',
+    payload: id,
   };
 }

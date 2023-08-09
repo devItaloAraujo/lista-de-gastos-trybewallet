@@ -16,7 +16,12 @@ const INITIAL_STATE = {
 
 function WalletForm() {
   const currencies = useSelector((state: RootState) => state.wallet.currencies);
-  const id = useSelector((state: RootState) => state.wallet.expenses.length);
+  const newId = useSelector((state: RootState) => {
+    const arrayExpense = state.wallet.expenses;
+    return (
+      (arrayExpense.slice(-1)[0] ?? { id: -1 }).id + 1
+    );
+  });
   const payMethod = ['Dinheiro', 'Cartão de crédito', 'Cartão de débito'];
   const tags = ['Alimentação', 'Lazer', 'Trabalho', 'Transporte', 'Saúde'];
   const [formData, setFormData] = useState<ExpenseType>(INITIAL_STATE);
@@ -34,7 +39,7 @@ function WalletForm() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    dispatch(sendExpense({ ...formData, id }));
+    dispatch(sendExpense({ ...formData, id: newId }));
     setFormData(INITIAL_STATE);
   };
 
