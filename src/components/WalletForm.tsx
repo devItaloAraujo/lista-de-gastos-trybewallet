@@ -45,7 +45,7 @@ function WalletForm() {
 
   return (
     <div>
-      <form onSubmit={ handleSubmit }>
+      <form onSubmit={ handleSubmit } className="formWallet">
         <label>
           Valor:
           <input
