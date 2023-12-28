@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Dispatch, fetchCurrencies, sendEmail } from '../redux/actions';
+import './Pages.css';
 
 const INITIAL_STATE = {
   email: '',
@@ -46,11 +47,14 @@ function Login() {
 
   return (
     <form>
+      <h2>Carteira de gastos: Trybewallet</h2>
       <input
         type="email"
         name="email"
         id="email"
+        className="inputLogin"
         data-testid="email-input"
+        placeholder="Email"
         onChange={ handleChange }
         value={ formData.email }
       />
@@ -58,7 +62,9 @@ function Login() {
         type="password"
         name="password"
         id="password"
+        className="inputLogin"
         data-testid="password-input"
+        placeholder="Senha de 6 digitos"
         onChange={ handleChange }
         value={ formData.password }
       />

@@ -27,21 +27,20 @@ export function Header() {
 
   return (
     <div>
-      <h3 data-testid="email-field">
+      <h2 data-testid="email-field">
         Email:
         {' '}
         { email }
-      </h3>
-      <h3>
-        Total:
-        {' '}
-      </h3>
-      <h3 data-testid="total-field">
-        { total.toFixed(2) }
-      </h3>
-      <h3 data-testid="header-currency-field">
-        BRL
-      </h3>
+      </h2>
+      <div className="total">
+        <h3>
+          Total:
+          {' '}
+          { total.toFixed(2) }
+          {' '}
+          BRL
+        </h3>
+      </div>
     </div>
   );
 }

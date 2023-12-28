@@ -11,7 +11,7 @@ function Table() {
     'Câmbio utilizado',
     'Valor convertido',
     'Moeda de conversão',
-    'Editar/Excluir'];
+    'Excluir'];
 
   const expenses = useSelector((state: RootState) => state.wallet.expenses);
 

@@ -73,7 +73,7 @@ function WalletForm() {
           </select>
         </label>
         <label>
-          Método de Pagamento:
+          Método:
           <select
             data-testid="method-input"
             name="method"

@@ -5,7 +5,6 @@ import './App.css';
 function App() {
   return (
     <div>
-      <p>TrybeWallet!</p>
       <Router />
     </div>
   );
