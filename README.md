@@ -1,7 +1,7 @@
 # Projeto lista de gastos: Trybewallet 
 
 # Contexto
-Este projeto trata-se  de uma aplicação front-end de um lista dinâmica de gastos, onde pode-se colocar despesas em diversas moeadas e ter seus valores convertidos e somados em real.
+Este projeto trata-se  de uma aplicação front-end de uma lista dinâmica de gastos, onde pode-se colocar despesas em diversas moeadas e ter seus valores convertidos e somados em real.
 A consulta do valor da moeda é feita em tempo real por meio de uma API. Estados gerenciados utilizando React Redux.
 
 Exibe uma lista das despesas com suas tags, descrição, valor e método de pagamento bem como o total de gastos.
